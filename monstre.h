@@ -15,3 +15,12 @@ class Monstre
     int getDamage() const;
     Monstre(std::string nom, int pv, int degats, bool etat);
  
+    private:
+ 
+    std::string name;
+    int hp;
+    int att;
+    bool currentState;
+};
+ 
+#endif
