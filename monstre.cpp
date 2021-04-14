@@ -16,3 +16,25 @@ void Monstre::Affichage(){
         cout << name << " est mort " << endl ;
     }
 }
+
+void Monstre::Attaque(Monstre &cible){
+    if (currentState){
+        cible.recevoirDamage(getDamage());
+    }
+    else{
+        cout << name << " a déjà attaqué ! " << endl;
+    }
+}
+
+void Monstre::recevoirDamage(int nbDegats){
+    hp -= nbDegats;
+
+    if (hp < 0)
+    {
+        hp = 0;
+    }
+}
+
+int Monstre::getDamage() const{
+    return att;
+}
